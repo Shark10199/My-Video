@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Video Website</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      #overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #continue-button {
+        font-size: 24px;
+        padding: 20px;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      function onContinueButtonClick() {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("video").play();
+      }
+    </script>
+  </head>
+  <body>
+    <video id="video" src="video.mp4"></video>
+    <div id="overlay">
+      <div id="continue-button" onclick="onContinueButtonClick()">Continue</div>
+    </div>
+  </body>
+</html>
